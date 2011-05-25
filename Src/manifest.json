@@ -1,0 +1,17 @@
+{
+  "content_scripts": [ {
+    "js": [ "keyboard.js" ],
+    "matches": [ "http://*/*", "https://*/*" ]
+  } ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "controls.html"
+  },
+  "background_page": "background.html",
+  "description": "Extension which lets you control Grooveshark playback. Supports keyboard shortcuts accessible from arbitrary tabs.",
+  "icons": { "128": "icon_128.png" },
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9XHLRHOPBI63vF3MV03bP5CXmC1zIGU0dazwy9tgQaXzLOYJZOq12wSGD0tuzC7+yzyTp9eScVWC/dGI059PHtl7gePvLt1LzbDm225aPWudFp5h6Hy/uLCaZNSVjObE1IvLX4P5I2cx1pAb1FGRV5IMqm9BXtFm3JF3+vg70yQIDAQAB",
+  "name": "Grooveshark Controller",
+  "permissions": [ "tabs", "http://listen.grooveshark.com/", "http://grooveshark.com/" ],
+  "version": "1.0"
+}

@@ -1,0 +1,30 @@
+<html>
+<head>
+  <script type="text/javascript">
+    function doIt(a) {
+      chrome.tabs.getAllInWindow(null, function(tabs) {
+        tabs.forEach(function(tab) {
+          if (tab.title.indexOf('Grooveshark') > 0) {
+            chrome.tabs.executeScript(tab.id, { code: "document.getElementById('" + a + "').click()" });
+          }
+        });
+      });
+    }
+    
+    function playPause(){
+      doIt('player_play_pause');
+    }
+    
+    function previous(){
+      doIt('player_previous');
+    }
+    
+    function next(){
+      doIt('player_next');
+    }
+  </script>
+</head>
+<body style="width: 120px; margin: 0; background-color: #000;">
+  <a href="#" onclick="playPause()"><img src="img/play.png" width="26" height="32" id="play"><img src="img/pause.png" width="26" height="32" id="pause"></a><a href="#" onclick="previous()"><img src="img/prev.png" width="32" height="32"></a><a href="#" onclick="next()"><img src="img/next.png" width="32" height="32"></a>
+</body>
+</html>
